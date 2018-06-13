@@ -1,9 +1,11 @@
 FROM osrm/osrm-backend
 
+RUN apk add --update bash && rm -rf /var/cache/apk/*
+
 COPY canary-islands-latest.osm.pbf /opt
+COPY script.sh /opt
+RUN chmod +x script.sh
 
-EXPOSE 5000
+#EXPOSE 5000
 
-#osrm-extract -p car.lua canary-islands-latest.osm.pbf
-
-#ENTRYPOINT ["tail", "-f", "/etc/passwd"]
+CMD ["bash","script.sh"]
