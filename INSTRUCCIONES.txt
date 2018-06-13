@@ -1,0 +1,11 @@
+docker build -t lmao .
+docker run -t -i -p 5000:5000
+(en la terminal)
+osrm extract canary-islands-latest.osm.pbf -p car.lua
+osrm-contract canary-islands-latest.osrm
+osrm-routed canary-islands-latest.osrm (lanzar servicio)
+
+------------------SI YA ESTA MONTADO---------------------------
+
+docker exec  -it container sh
+osrm-routed canary-islands-latest.osrm
