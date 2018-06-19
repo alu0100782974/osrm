@@ -6,6 +6,6 @@ COPY canary-islands-latest.osm.pbf /opt
 COPY script.sh /opt
 RUN chmod +x script.sh
 
-#EXPOSE 5000
+EXPOSE 5000
 
 CMD ["bash","script.sh"]
